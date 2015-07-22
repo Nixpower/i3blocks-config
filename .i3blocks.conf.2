@@ -1,0 +1,162 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/local/libexec/i3blocks/$BLOCK_NAME
+markup=none
+full_text=⎠
+align=center
+color=#FF000D
+separator=false
+separator_block_width=7
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+#[volume]
+#label=VOL
+#label=♪
+#instance=Master
+#instance=PCM
+#interval=once
+#signal=10
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+
+#[usb]
+#command=~/.config/i3blocks/blocks/i3blocks-usb/usb.py
+#markup=pango
+#signal=1
+#interval=10
+
+[separator]
+
+[suspend]
+full_text=SLEEP
+color=#ef0ec2
+command=systemctl suspend
+
+[separator]
+
+[browser]
+full_text=TOR
+color=#36c976
+command=tor-browser-en
+
+#[i3lock]
+#full_text=LOCK
+#color=#ffd700
+#command=
+
+[separator]
+
+[focused window]
+command=xtitle -s
+interval=persist
+color=#16FAD0
+
+[separator]
+
+[youtube_controller]
+command=/home/codingman/GitHub/youtubed/youtubed_controller
+interval=once
+markup=pango
+signal=1
+color=#DCFA16
+# use pkill -RTMIN+1 i3blocks to trigger a block update
+
+[separator]
+
+[Weather]
+command=~/.i3/weather.sh "61801"
+interval=1800
+color=#e97ac8
+
+[separator]
+
+[updates]
+label=Updates:
+color=#E3AC34
+command=checkupdates | wc -l
+interval=100
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+label=BAT
+#label=⚡
+#instance=1
+interval=30
+
+# Date Time
+#
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+color=#F7ABAB
+interval=5
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+#[mediaplayer]
+#instance=spotify
+#interval=5
+#signal=10
+
+# OpenVPN support
+#
+# Support multiple VPN, with colors.
+#[openvpn]
+#interval=20
+
+[separator]
+
+[volume]
+instance=130/5
+command=/home/codingman/.i3/i3blocks-volume-pulse
+interval=once
+
+# Temperature
+#
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#instance=CAPS
+#interval=once
+#signal=11
+
+#[keyindicator]
+#instance=NUM
+#interval=once
+#signal=11
