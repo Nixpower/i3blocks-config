@@ -132,6 +132,8 @@ color=#7FC269
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 
+[separator]
+
 [temp0]
 command=sensors coretemp-isa-0000 | awk '/Core 0/ { print $1 " " $2 " " $3 }'
 interval=10
