@@ -48,30 +48,11 @@ separator_block_width=7
 #
 # The type defaults to "mem" if the instance is not specified.
 
-#[usb]
-#command=~/.config/i3blocks/blocks/i3blocks-usb/usb.py
-#markup=pango
-#signal=1
-#interval=10
-
-[separator]
-
-[suspend]
-full_text=SLEEP
-color=#ef0ec2
-command=systemctl suspend
-
-[separator]
-
-[browser]
-full_text=TOR
-color=#36c976
-command=tor-browser-en
-
-#[i3lock]
-#full_text=LOCK
-#color=#ffd700
-#command=
+[usb]
+command=~/.config/i3blocks/blocks/i3blocks-usb/usb.py
+markup=pango
+signal=1
+interval=10
 
 [separator]
 
@@ -83,7 +64,7 @@ color=#16FAD0
 [separator]
 
 [youtube_controller]
-command=/home/codingman/GitHub/youtubed/youtubed_controller
+command=$YOUTUBED_CLONED_PATH/youtubed/youtubed_controller
 interval=once
 markup=pango
 signal=1
@@ -140,7 +121,7 @@ interval=5
 
 [volume]
 instance=130/5
-command=/home/codingman/.i3/i3blocks-volume-pulse
+command=~/i3/i3blocks-volume-pulse
 interval=once
 
 # Temperature
