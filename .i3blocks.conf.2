@@ -89,11 +89,20 @@ interval=100
 # Battery indicator
 #
 # The battery instance defaults to 0.
-[battery]
-label=BAT
+#[battery]
+#label=BAT
 #label=⚡
 #instance=1
-interval=30
+#interval=30
+
+[separator]
+
+[volume]
+instance=130/5
+command=~/.i3/i3blocks-volume-pulse
+interval=once
+
+[separator]
 
 # Date Time
 #
@@ -116,13 +125,6 @@ interval=5
 # Support multiple VPN, with colors.
 #[openvpn]
 #interval=20
-
-[separator]
-
-[volume]
-instance=130/5
-command=~/i3/i3blocks-volume-pulse
-interval=once
 
 # Temperature
 #
