@@ -179,3 +179,6 @@ bar {
 #bar {status_command $HOME/bin/conky-i3bar}
 #Uzbl Tabbing
 for_window [class="Uzbl-core"] focus child, layout stacked, focus
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
