@@ -89,11 +89,27 @@ interval=once
 
 [separator]
 
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+[keyindicator]
+instance=CAPS
+interval=once
+signal=11
+
+[keyindicator]
+instance=NUM
+interval=once
+signal=11
+
 # Date Time
 #
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
-color=#F7ABAB
+color=#0ad1c3
 interval=5
 
 # Generic media player support
@@ -113,18 +129,4 @@ interval=5
 
 # Temperature
 #
-# Key indicators
-#
-# Add the following bindings to i3 config file:
-#
-# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-[keyindicator]
-instance=CAPS
-interval=once
-signal=11
 
-[keyindicator]
-instance=NUM
-interval=once
-signal=11
