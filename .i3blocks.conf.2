@@ -64,6 +64,13 @@ interval=10
 
 [separator]
 
+[NetStatus]
+command=ping -c 1 google.com &> /dev/null && echo -e "Internet:$tecreset Connected" || echo -e "Internet:$tecreset Disconnected"
+color=#00FF00
+interval=7200
+
+[separator]
+
 [youtube_controller]
 command=$YOUTUBED_CLONED_PATH/youtubed/youtubed_controller
 interval=once
