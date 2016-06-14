@@ -1,0 +1,156 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/libexec/i3blocks/$BLOCK_NAME
+markup=none
+separator=true
+separator_block_width=15
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+#[volume]
+#label=VOL
+#label=♪
+#instance=Master
+#instance=PCM
+#interval=once
+#signal=10
+
+#[speedtest]
+#full_text=Speedtest
+#command=python ~/.i3-priv/speedtest-cli.py
+
+#[dunst]
+#command=~/i3blocks-config/notify
+#full_text=❗
+#color=#6CB5FF
+#signal=12
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+
+[usb]
+command=python3.4 ~/i3blocks-config/usb.py -i sdb1 -i sdb2 -i sdb3 -i sda1 -i sda2 -i sda4
+markup=pango
+signal=1
+interval=10
+
+[focused window]
+command=xtitle -s
+interval=persist
+color=#16FAD0
+
+#[separator]
+
+[uptime]
+label=Uptime:
+command=uptime -p | sed -e 's/hour/Hour/' -e 's/minute/Minute/' -e 's/up //' -e 's/day/Day/' -e 's/week/Week/' -e 's/month/Month/' -e 's/year/Year/'
+interval=60
+color=#1EFA55
+
+[youtube_controller]
+command=/usr/local/bin/youtubed_controller
+interval=once
+markup=pango
+signal=1
+color=#DCFA16
+# use pkill -RTMIN+1 i3blocks to trigger a block update
+
+[Weather]
+command=~/i3blocks-config/weather.sh "61801"
+interval=900
+color=#e97ac8
+
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+#[battery]
+#label=BAT
+#label=⚡
+#instance=1
+#interval=30
+
+[volume]
+instance=130/5
+command=/home/codingman/i3blocks-config/i3blocks-volume-pulse
+interval=once
+
+[mic]
+command=~/.config/i3blocks/blocks/mic/micscript
+color=#225dcc
+interval=20
+
+#[separator]
+
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+[keyindicator]
+instance=CAPS
+separator=false
+interval=once
+signal=11
+
+[keyindicator]
+instance=NUM
+interval=once
+signal=11
+
+#[separator]
+
+# Date Time
+#
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+color=#0ad1c3
+interval=5
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+#[mediaplayer]
+#instance=spotify
+#interval=5
+#signal=10
+
+# OpenVPN support
+#
+# Support multiple VPN, with colors.
+#[openvpn]
+#interval=20
+
+# Temperature
+#
+

@@ -1,0 +1,160 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/libexec/i3blocks/$BLOCK_NAME
+markup=none
+#full_text=⎛
+align=bottom
+#color=#666666
+color=#FF000D
+separator=true
+separator_block_width=15
+
+
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+#[volume]
+#label=VOL
+#label=♪
+#instance=Master
+#instance=PCM
+#interval=once
+#signal=10
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+
+#[updates]
+#label=Updates:
+#color=#E3AC34
+#command=checkupdates | wc -l
+#interval=100
+
+[iface]
+label=Private IP:
+instance=eno1
+color=#1ED2FA
+interval=10
+separator=false
+
+[External IP]
+label=Public IP:
+command=curl -6 icanhazip.com
+color=#1EFA88
+separator=false
+interval=6000
+
+#[wifi]
+#instance=wlp3s0
+#interval=10
+
+[bandwidth]
+instance=eno1
+color=#F538F2
+interval=5
+
+[disk]
+label=Disk:
+color=#996600
+instance=/
+separator=false
+interval=30
+
+[disk-io]
+command=~/i3blocks-config/disk-io -w 2 -M -P 0 -L 'Read: ' -s Write:
+interval=persist
+color=#A8E87D
+markup=pango
+#instance=/^sda/
+
+[memory]
+label=RAM:
+color=#E87625
+separator=false
+interval=30
+
+[memory]
+label=Swap:
+color=#9999FF
+instance=swap
+interval=30
+
+[cpu_usage]
+label=CPU:
+interval=10
+color=#FFFF00
+separator=false
+#min_width=CPU: 100.00%
+
+[load_average]
+label=Load:
+interval=10
+color=#7FC269
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+
+[temp0]
+command=sensors coretemp-isa-0000 | awk '/Core 0/ { print $1 " " $2 " " $3 }'
+interval=10
+separator=false
+color=#21b3f2
+
+[temp1]
+command=sensors coretemp-isa-0000 | awk '/Core 1/ { print $1 " " $2 " " $3 }'
+interval=10
+separator=false
+color=#21b3f2
+
+[temp2]
+command=sensors coretemp-isa-0000 | awk '/Core 2/ { print $1 " " $2 " " $3 }'
+interval=10
+separator=false
+color=#21b3f2
+
+[temp3]
+command=sensors coretemp-isa-0000 | awk '/Core 3/ { print $1 " " $2 " " $3 }'
+interval=10
+color=#21b3f2
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+#[mediaplayer]
+#instance=spotify
+#interval=5
+#signal=10
+
+# OpenVPN support
+#
+# Support multiple VPN, with colors.
+#[openvpn]
+#interval=20
