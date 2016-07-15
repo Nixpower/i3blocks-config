@@ -122,25 +122,37 @@ color=#7FC269
 # see the script for details.
 
 [temp0]
-command=sensors coretemp-isa-0000 | awk '/Core 0/ { print $1 " " $2 " " $3 }'
+command=sensors coretemp-isa-0000 | awk '/Core 0/ { print $2 " " $3 }'
 interval=10
 separator=false
 color=#21b3f2
 
 [temp1]
-command=sensors coretemp-isa-0000 | awk '/Core 1/ { print $1 " " $2 " " $3 }'
+command=sensors coretemp-isa-0000 | awk '/Core 1/ { print $2 " " $3 }'
 interval=10
 separator=false
 color=#21b3f2
 
 [temp2]
-command=sensors coretemp-isa-0000 | awk '/Core 2/ { print $1 " " $2 " " $3 }'
+command=sensors coretemp-isa-0000 | awk '/Core 2/ { print $2 " " $3 }'
 interval=10
 separator=false
 color=#21b3f2
 
 [temp3]
-command=sensors coretemp-isa-0000 | awk '/Core 3/ { print $1 " " $2 " " $3 }'
+command=sensors coretemp-isa-0000 | awk '/Core 3/ { print $2 " " $3 }'
+interval=10
+separator=false
+color=#21b3f2
+
+[temp4]
+command=sensors coretemp-isa-0000 | awk '/Core 4/ { print $2 " " $3 }'
+interval=10
+separator=false
+color=#21b3f2
+
+[temp5]
+command=sensors coretemp-isa-0000 | awk '/Core 5/ { print $2 " " $3 }'
 interval=10
 color=#21b3f2
 

@@ -31,7 +31,7 @@ bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
-
+bindsym $mod+Ctrl+q kill
 # start program launcher
 bindsym $mod+d exec --no-startup-id dmenu_recency
 
