@@ -58,7 +58,7 @@ exec --no-startup-id dropbox
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec brave 
+bindsym $mod+F2 exec env GTK_THEME=Adwaita:light firefox 
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm
@@ -305,7 +305,7 @@ bar {
 
 bar {
 	status_command i3blocks -c /home/nixpower/i3blocks-config/i3blocks.conf.2
-	output DVI-D-0
+	output DVI-D-1
 
 	bindsym button4 nop
 	bindsym button5 nop
